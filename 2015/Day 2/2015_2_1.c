@@ -23,17 +23,11 @@ int main(){
         int surface_area = (2*length*width) + (2*width*height) + (2*height*length);
         
         //add area of smallest side for slack
-        int temp = (length < width) ? length : width;
-        int min = (temp < height) ? temp : height;
+        int temp = (length*width < width*height) ? length*width : width*height;
+        int min = (temp < height*length) ? temp : height*length;
+        
         // sum += min;
-
         sum += min + surface_area;
-        // printf("%d \n", length);
-        // printf("%d \n", width);
-        // printf("%d \n", height);
-        // printf("%d \n", min);
-        // printf("%d \n", surface_area);
-        // printf("%d \n", sum);
     }
     printf("%d \n", sum);
 }
